@@ -12,13 +12,13 @@
 <body>
 <h1 class="u-mbm is-big">JS2</h1>
 <div class="wrapper">
-  <div class="u-mbm btn">Q1</div>
-  <div class="u-mbm btn">Q2</div>
-  <div class="u-mbm btn">Q3</div>
-  <div class="u-mbm btn">Q4</div>
-  <div class="u-mbm btn">Q5</div>
-  <div class="u-mbm btn">Q6</div>
-  <div class="u-mbm btn">Q7</div>
+  <div id = "Q1" class="u-mbm btn">Q1</div>
+  <div class="u-mbm btn"><div id = "Q2">Q2</div></div>
+  <div class="u-mbm btn"><div id = "Q3">Q3</div></div>
+  <div id = "Q4" class="u-mbm btn">Q4</div>
+  <div id = "Q5" class="u-mbm btn">Q5</div>
+  <div id = "Q6" class="u-mbm btn">Q6</div>
+  <div id = "Q7" class="u-mbm btn">Q7</div>
 </div>
 
 <script defer>
@@ -43,12 +43,81 @@
    * 何もしない
    */
 
+  var Q1 = document.getElementById('Q1');
+  Q1.addEventListener('click', function(){
+    var res = window.prompt("年代を確認しますか？（はいorいいえ）");
+    console.log(res);
+
+    if (res == "はい"){
+      var age = window.prompt("何歳ですか？（数字で）");
+      if(age <= 1){
+        alert(age +"歳のあなたは乳児でちゅ。");
+      }else if (age <= 6){
+        alert(age +"歳のあなたは幼児でしゅ");
+      }else if (age <= 12){
+        alert(age +"歳のあなたは小学生だよ。");
+      }else if (age <= 15){
+        alert(age +"歳のあなたは中学生だぜ。");
+      }else if (age <= 18){
+        alert(age +"歳のあなたは高校生っす。");
+      }else if (age <= 22){
+        alert(age +"歳のあなたは大学生です。");
+      }else if (age <= 59){
+        alert(age +"歳のあなたは社会人であります。");
+      }else if (age <= 99){
+        alert(age +"歳のあなたは高齢者じゃ。");
+      }else if (age >= 100){
+        alert(age +"歳、、、すごい、、、");
+      }else{
+        alert("you!!");
+      }
+
+    }
+    else if (res == "いいえ"){
+      alert("次へどうぞ");
+    }else{
+      alert("おとといきやがれ！")
+    };
+
+
+  });
+
   // 第2問 id="q2"の要素をクリックしたらfor文を用いて、12345678910という文字列を作り、#q2の後にその文字列を挿入せよ。
+  var Q2 = document.getElementById('Q2');
+  Q2.addEventListener('click', function(){
+    for(var i = 1 ; i < 11; i = i+1){
+      let new_element1 = document.createElement('p');
+      new_element1.textContent = 11 - i;
 
+      Q2.after(new_element1);
+    };
+  });
   // 第3問 id="q3"の要素をクリックしたらfor文、if文を用いて、1~100の数字で3と7を約数に持つ（3と7で割れる）整数で文字列を作り、#q3の後にその文字列を挿入せよ。
+  var Q3 = document.getElementById('Q3');
 
+  Q3.addEventListener('click', function(){
+    for(let j = 1 ; j < 101; j = j+1){
+      if (j % 3 == 0){
+        if(j % 7 == 0){
+          console.log(j);
+          let new_element2 = document.createElement('p');
+          new_element2.textContent = j;
+
+          Q3.after(new_element2);
+
+        }else{};
+      }else{};
+    };  
+  });
   // 第4問 id="q4"の要素をクリックしたらfor文を用いて、[2,4,6,8,10,12,14,16,18,20]という配列をconsoleに出力せよ。
-
+  var Q4 = document.getElementById('Q4');
+  Q4.addEventListener('click', function(){
+    let data = new Array(10);
+    for(let k = 0; k <= 9 ;k = k+1){
+      data[k] = (k + 1)*2;
+    };
+    console.log(data);
+  });
   /**
    * 第5問 id="q5"の要素をクリックし、以下の情報をそれぞれ表示せよ。
    *
@@ -58,6 +127,22 @@
    * ④日（1~31）
    *
    */
+   var Q5 = document.getElementById('Q5');
+   Q5.addEventListener('click', function(){
+    var path = location.pathname;
+    var pathinfo = path.split('/');
+    let d = new Date();
+    console.log(path);
+    const year = d.getFullYear();
+    const month = d.getMonth() + 1;
+    const date = d.getDate();
+    const day = d.getDay();
+
+    console.log(year);
+    console.log(month);
+    console.log(date);
+
+   });
 
   /**
    * 第6問
@@ -67,6 +152,16 @@
    * 但し、コールバック関数は１つで実装すること。
    * 必要に応じて、要素に属性などは追加して良いものとします。
    */
+   document.getElementById('Q6').addEventListener('click',function(){
+
+   document.getElementById('Q6').style.color="#f00";
+   document.getElementById('Q7').style.color="#f00";
+   });
+   document.getElementById('Q7').addEventListener('click',function(){
+
+   document.getElementById('Q6').style.color="#00f";
+   document.getElementById('Q7').style.color="#00f";
+   });
 
 </script>
 </body>

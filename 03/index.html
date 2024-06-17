@@ -11,11 +11,11 @@
 </head>
 <body>
 <div class="wrapper">
-  <p class="modal-show">CLICK!!</p>
-  <div class="modal" style="display: none;">
+  <p id="appe" class="modal-show">CLICK!!</p>
+  <div id = "momo" class="modal" style="display: none;">
     <div class="modal-content">
       <div class="modal-text">MODAL WINDOW</div>
-      <button type="button" class="modal-close">x</button>
+      <button id = "disapp" type="button" class="modal-close">x</button>
     </div>
   </div>
 </div>
@@ -26,6 +26,14 @@
    *
    * 
    */
+var modal1 = document.getElementById("momo");
+
+document.getElementById('appe').addEventListener('click', function(){
+  modal1.style.display = "block";
+});
+document.getElementById('disapp').addEventListener('click', function(){
+  modal1.style.display = "none";
+});
 </script>
 </body>
 </html>

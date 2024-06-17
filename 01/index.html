@@ -12,48 +12,48 @@
 <body>
 <h1 class="u-mbm is-big">JS1</h1>
 <div class="wrapper">
-  <div class="u-mbm btn">Q1</div>
-  <div class="u-mbm btn">Q2</div>
-  <div class="u-mbm btn">Q3</div>
-  <div class="u-mbm btn">Q4</div>
-  <div class="u-mbm btn is-big">Q5</div>
-  <div class="u-mbm btn">Q6</div>
+  <div id = "fonts" class="u-mbm btn">Q1</div>
+  <div id = "target" class="u-mbm btn">Q2</div>
+  <div id = "color" class="u-mbm btn">Q3</div>
+  <div id = "textin" class="u-mbm btn"><div id = "textinin">Q4</div></div>
+  <div id = "remove" class="u-mbm btn is-big">Q5</div>
+  <div id = "move" class="u-mbm btn">Q6</div>
   <div>
-    <dl class="u-mbm lists">
-      <dt>Q7_dt_1</dt>
+    <dl id = "nun1" class="u-mbm lists">
+      <dt >Q7_dt_1</dt>
       <dd>Q7_dd_1</dd>
     </dl>
-    <dl class="u-mbm lists">
+    <dl id = "nun2" class="u-mbm lists">
       <dt>Q7_dt_2</dt>
       <dd>Q7_dd_2</dd>
     </dl>
-    <dl class="u-mbm lists">
+    <dl id = "nun3" class="u-mbm lists">
       <dt>Q7_dt_3</dt>
       <dd>Q7_dd_3</dd>
     </dl>
-    <dl class="u-mbm lists">
+    <dl id = "nun4" class="u-mbm lists">
       <dt>Q7_dt_4</dt>
       <dd>Q7_dd_</dd>
     </dl>
-    <dl class="u-mbm lists">
+    <dl id = "nun5" class="u-mbm lists">
       <dt>Q7_dt_5</dt>
       <dd>Q7_dd_5</dd>
     </dl>
   </div>
-  <div class="u-mbm btn">Q8</div>
-  <div class="u-mbm btn">Q9</div>
+  <div id = "hover" class="u-mbm btn">Q8</div>
+  <div id = "data" class="u-mbm btn" data-user-name="yuuya">Q9</div>
   <ul class="u-mbm lists">
-    <li>Q10_1</li>
-    <li>Q10_2</li>
-    <li>Q10_3</li>
+    <li id = "big1">Q10_1</li>
+    <li id = "big2">Q10_2</li>
+    <li id = "big3">Q10_3</li>
   </ul>
   <ul class="u-mbm lists">
-    <li>Q11_1</li>
-    <li>Q11_2</li>
-    <li>Q11_3</li>
+    <li id = "Big1">Q11_1</li>
+    <li id = "Big2">Q11_2</li>
+    <li id = "Big3">Q11_3</li>
   </ul>
-  <div class="u-mbm btn">Q12</div>
-  <ul class="u-mbm lists">
+  <div id = "Q12" class="u-mbm btn">Q12</div>
+  <ul id = "List" class="u-mbm lists">
     <li>Q13_1</li>
     <li>Q13_2</li>
     <li>Q13_3</li>
@@ -63,30 +63,149 @@
 <script defer>
   // js課題① 下記問題のJSを実装して下さい
 
-  // 第1問 ロードから5秒後にQ1の要素の文字サイズを30pxにせよ。
-  function warning() {
-    window alert("message")
+  // 第1問 ロードから5秒後にQ1の要素の文字サイズを30pxにせよ
+  function change1(){
+    var fs = document.getElementById("fonts");
+    fs.style.fontSize = "30px";
   }
 
+  setTimeout(() => {
+    change1();
+  }, 5000);
+
   // 第2問 Q2の要素をクリックしたら背景色を赤、文字色を黒にせよ。
+  document.getElementById('target').addEventListener('click',function(){
+
+    document.getElementById('target').style.background='#f00';
+    document.getElementById('target').style.color="#000";
+  });
 
   // 第3問 Q3の要素をクリックしたら文字色を赤にし、その状態でもう一度クリックすると元に戻るようにせよ。
+  var test = document.getElementById("color");
+    test.style.color = "#ffffff";
+ 
+    test.addEventListener("click", function(){
+    if(document.defaultView.getComputedStyle(test, null).color == "rgb(255, 255, 255)") {
+    test.style.color = "#ff0000";
+    } else {
+    test.style.color = "#ffffff";
+    }
+    });
+
 
   // 第4問 Q4の要素をクリックしたらこの要素の前後とこの要素内の前後に<p>テキスト</p>を挿入せよ。
+  let intext = document.getElementById('textin');
+  let intext2 = document.getElementById('textinin');
+
+    intext.addEventListener("click", function(){
+
+    let new_element1 = document.createElement('p');
+    new_element1.textContent = 'テキスト';
+    let new_element2 = document.createElement('p');
+    new_element2.textContent = 'テキスト';
+    let new_element3 = document.createElement('p');
+    new_element3.textContent = 'テキスト';    
+    let new_element4 = document.createElement('p');
+    new_element4.textContent = 'テキスト';
+
+    intext.after(new_element1);
+    intext.before(new_element2);
+    intext2.after(new_element3);
+    intext2.before(new_element4);
+    });
 
   // 第5問 Q5の要素をクリックしたらこの要素からis-bigというクラスを削除せよ。
 
-  // 第6問 Q6の要素をクリックしたらこの要素を0.5秒かけてmargin-rightとmargin-bottomを150pxの位置に移動させよ。
+  var Q5 = document.getElementById("remove");
 
+  Q5.addEventListener("click", function(){
+    Q5.classList.remove('is-big');
+  });
+
+  // 第6問 Q6の要素をクリックしたらこの要素を0.5秒かけてmargin-rightとmargin-bottomを150pxの位置に移動させよ。
+  var Q6 = document.getElementById("move")
+  Q6.addEventListener("click", function(){
+    Q6.style.position = "relative";
+    Q6.style.transition = "2.5s"
+
+    Q6.style.marginLeft = "150px";
+    Q6.style.marginTop = "150px";
+  });
   // 第7問 Q7の要素をクリックしたら、その要素が「何番目のdlの子要素」かをconsole.log()とalert()を用いて表示させよ。（最初の要素は0ではなく1と表示されること）Hint：closest()メソッドを使う
+  var nun1 = document.getElementById("nun1");
+  nun1.addEventListener("click", function(){console.log("1");alert("1");});
+  var nun2 = document.getElementById("nun2");
+  nun2.addEventListener("click", function(){console.log("2");alert("2");});
+  var nun3 = document.getElementById("nun3");
+  nun3.addEventListener("click", function(){console.log("3");alert("3");});
+  var nun4 = document.getElementById("nun4");
+  nun4.addEventListener("click", function(){console.log("4");alert("4");});
+  var nun5 = document.getElementById("nun5");
+  nun5.addEventListener("click", function(){console.log("5");alert("5");});
 
   // 第8問 Q8の要素をhoverしたらis-bigというクラスを付与し、hoverが外れたら、クラスを削除せよ。
+  var Q8 = document.getElementById("hover");
+
+  Q8.addEventListener("mouseover", function(){
+    Q8.classList.add('is-big');
+  });
+  Q8.addEventListener("mouseleave", function(){
+    Q8.classList.remove('is-big');
+  });
 
   // 第9問 Q9の要素をクリックしたらこの要素にdata属性を設定し、その内容をconsoleに表示せよ。
+  var Q9 = document.getElementById("data");
 
+  Q9.addEventListener("click", function(){
+    const elem = document.querySelector('#data');
+    elem.dataset.userAge = 23;
+    console.log(elem.dataset.userAge);
+  });
   // 第10問 Q10の子要素をクリックしたら、その要素のインデックスと等しいid="q11"の子要素にis-bigというクラスを追加し、それ以外のクラスからは削除せよ。（インデックスの一致する要素だけにis-bigがついている状態）
+  var Q10_1 = document.getElementById("big1");
+  var Q11_1 = document.getElementById("Big1");
+  var Q11_2 = document.getElementById("Big2");
+  var Q11_3 = document.getElementById("Big3");
+
+  Q10_1.addEventListener("click", function(){
+    Q10_1.classList.add('is-big');
+    Q11_1.classList.add('is-big');
+    Q10_2.classList.remove('is-big');
+    Q10_3.classList.remove('is-big');
+    Q11_2.classList.remove('is-big');
+    Q11_3.classList.remove('is-big');
+  });
+  var Q10_2 = document.getElementById("big2");
+    Q10_2.addEventListener("click", function(){
+    Q10_2.classList.add('is-big');
+    Q10_1.classList.remove('is-big');
+    Q10_3.classList.remove('is-big');
+    Q11_2.classList.add('is-big');
+    Q11_1.classList.remove('is-big');
+    Q11_3.classList.remove('is-big');
+  });
+  var Q10_3 = document.getElementById("big3");
+    Q10_3.addEventListener("click", function(){
+    Q10_3.classList.add('is-big');
+    Q10_2.classList.remove('is-big');
+    Q10_1.classList.remove('is-big');
+    Q11_3.classList.add('is-big');
+    Q11_2.classList.remove('is-big');
+    Q11_1.classList.remove('is-big');
+  });
 
   // 第11問 Q12をクリックしたら、Q13リストのli要素の順番と中身のテキストをconsoleに表示させよ。
+  var Q12 = document.getElementById('Q12')
+  const ulelment = document.getElementById('List');
+  const lielement = ulelment.getElementsByTagName('li');
+
+  Q12.addEventListener("click", function(){
+
+  const liArray = Array.from(lielement);
+  for (var i = 0; i < 3; i = i+1){
+    console.log(i+1 ,lielement[i].textContent);
+  };
+  });
 </script>
 </body>
 </html>
