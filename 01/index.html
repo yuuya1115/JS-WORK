@@ -200,11 +200,10 @@
   const lielement = ulelment.getElementsByTagName('li');
 
   Q12.addEventListener("click", function(){
-
-  const liArray = Array.from(lielement);
-  for (var i = 0; i < 3; i = i+1){
-    console.log(i+1 ,lielement[i].textContent);
-  };
+    const liArray = Array.from(lielement);
+    for (var i = 0; i < 3; i = i+1){
+      console.log(i+1 ,lielement[i].textContent);
+    };
   });
 </script>
 </body>

@@ -127,22 +127,22 @@
    * ④日（1~31）
    *
    */
-   var Q5 = document.getElementById('Q5');
-   Q5.addEventListener('click', function(){
-    var path = location.pathname;
-    var pathinfo = path.split('/');
-    let d = new Date();
-    console.log(path);
-    const year = d.getFullYear();
-    const month = d.getMonth() + 1;
-    const date = d.getDate();
-    const day = d.getDay();
+  var Q5 = document.getElementById('Q5');
+  Q5.addEventListener('click', function(){
+   var path = location.pathname;
+   var pathinfo = path.split('/');
+   let d = new Date();
+   console.log(path);
+   const year = d.getFullYear();
+   const month = d.getMonth() + 1;
+   const date = d.getDate();
+   const day = d.getDay();
 
-    console.log(year);
-    console.log(month);
-    console.log(date);
+   console.log(year);
+   console.log(month);
+   console.log(date);
 
-   });
+  });
 
   /**
    * 第6問
@@ -152,16 +152,16 @@
    * 但し、コールバック関数は１つで実装すること。
    * 必要に応じて、要素に属性などは追加して良いものとします。
    */
-   document.getElementById('Q6').addEventListener('click',function(){
+  document.getElementById('Q6').addEventListener('click',function(){
 
-   document.getElementById('Q6').style.color="#f00";
-   document.getElementById('Q7').style.color="#f00";
-   });
-   document.getElementById('Q7').addEventListener('click',function(){
+  document.getElementById('Q6').style.color="#f00";
+  document.getElementById('Q7').style.color="#f00";
+  });
+  document.getElementById('Q7').addEventListener('click',function(){
 
-   document.getElementById('Q6').style.color="#00f";
-   document.getElementById('Q7').style.color="#00f";
-   });
+  document.getElementById('Q6').style.color="#00f";
+  document.getElementById('Q7').style.color="#00f";
+  });
 
 </script>
 </body>

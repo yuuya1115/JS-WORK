@@ -28,25 +28,23 @@
    * ブラウザ画面に出力して下さい
    * FizzBuzz.pngが結果のイメージです
    */
-var FizzBuzz = document.getElementById('comp');
-const newP = document.createElement('p');
-FizzBuzz.addEventListener('click', function(){
-  for(var i = 1; i <= 100; i = i+1){
-    if (i % 3 == 0){
-      if (i % 5 == 0){
-        console.log("FizzBuzz");
+  var FizzBuzz = document.getElementById('comp');
+  const newP = document.createElement('p');
+  FizzBuzz.addEventListener('click', function(){
+    for(var i = 1; i <= 100; i = i+1){
+      if (i % 3 == 0){
+        if (i % 5 == 0){
+          console.log("FizzBuzz");
+        }else{
+          console.log("Fizz");
+        }
+      }else if (i % 5 == 0){
+        console.log("Buzz");
       }else{
-        console.log("Fizz");
+        console.log(i);
       }
-    }else if (i % 5 == 0){
-      console.log("Buzz");
-    }else{
-      console.log(i);
     }
-  }
-
-
-});
+    });
 </script>
 </body>
 </html>
