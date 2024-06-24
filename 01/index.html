@@ -43,14 +43,14 @@
   <div id = "hover" class="u-mbm btn">Q8</div>
   <div id = "data" class="u-mbm btn" data-user-name="yuuya">Q9</div>
   <ul class="u-mbm lists">
-    <li id = "big1">Q10_1</li>
-    <li id = "big2">Q10_2</li>
-    <li id = "big3">Q10_3</li>
+    <li id = "Q10_1">Q10_1</li>
+    <li id = "Q10_2">Q10_2</li>
+    <li id = "Q10_3">Q10_3</li>
   </ul>
   <ul class="u-mbm lists">
-    <li id = "Big1">Q11_1</li>
-    <li id = "Big2">Q11_2</li>
-    <li id = "Big3">Q11_3</li>
+    <li id = "Q11_1">Q11_1</li>
+    <li id = "Q11_2">Q11_2</li>
+    <li id = "Q11_3">Q11_3</li>
   </ul>
   <div id = "Q12" class="u-mbm btn">Q12</div>
   <ul id = "List" class="u-mbm lists">
@@ -82,23 +82,21 @@
 
   // 第3問 Q3の要素をクリックしたら文字色を赤にし、その状態でもう一度クリックすると元に戻るようにせよ。
   var test = document.getElementById("color");
-    test.style.color = "#ffffff";
+  test.style.color = "#ffffff";
  
-    test.addEventListener("click", function(){
+  test.addEventListener("click", function(){
     if(document.defaultView.getComputedStyle(test, null).color == "rgb(255, 255, 255)") {
-    test.style.color = "#ff0000";
+      test.style.color = "#ff0000";
     } else {
-    test.style.color = "#ffffff";
+      test.style.color = "#ffffff";
     }
-    });
-
+  });
 
   // 第4問 Q4の要素をクリックしたらこの要素の前後とこの要素内の前後に<p>テキスト</p>を挿入せよ。
   let intext = document.getElementById('textin');
   let intext2 = document.getElementById('textinin');
-
-    intext.addEventListener("click", function(){
-
+  
+  intext.addEventListener("click", function(){
     let new_element1 = document.createElement('p');
     new_element1.textContent = 'テキスト';
     let new_element2 = document.createElement('p');
@@ -133,15 +131,30 @@
   });
   // 第7問 Q7の要素をクリックしたら、その要素が「何番目のdlの子要素」かをconsole.log()とalert()を用いて表示させよ。（最初の要素は0ではなく1と表示されること）Hint：closest()メソッドを使う
   var nun1 = document.getElementById("nun1");
-  nun1.addEventListener("click", function(){console.log("1");alert("1");});
+
+  nun1.addEventListener("click", function(){
+    console.log("1");alert("1");
+  });
+
   var nun2 = document.getElementById("nun2");
-  nun2.addEventListener("click", function(){console.log("2");alert("2");});
+  nun2.addEventListener("click", function(){
+    console.log("2");alert("2");
+  });
+
   var nun3 = document.getElementById("nun3");
-  nun3.addEventListener("click", function(){console.log("3");alert("3");});
+  nun3.addEventListener("click", function(){
+    console.log("3");alert("3");
+  });
+
   var nun4 = document.getElementById("nun4");
-  nun4.addEventListener("click", function(){console.log("4");alert("4");});
+  nun4.addEventListener("click", function(){
+    console.log("4");alert("4");
+  });
+
   var nun5 = document.getElementById("nun5");
-  nun5.addEventListener("click", function(){console.log("5");alert("5");});
+  nun5.addEventListener("click", function(){
+    console.log("5");alert("5");
+  });
 
   // 第8問 Q8の要素をhoverしたらis-bigというクラスを付与し、hoverが外れたら、クラスを削除せよ。
   var Q8 = document.getElementById("hover");
@@ -162,10 +175,10 @@
     console.log(elem.dataset.userAge);
   });
   // 第10問 Q10の子要素をクリックしたら、その要素のインデックスと等しいid="q11"の子要素にis-bigというクラスを追加し、それ以外のクラスからは削除せよ。（インデックスの一致する要素だけにis-bigがついている状態）
-  var Q10_1 = document.getElementById("big1");
-  var Q11_1 = document.getElementById("Big1");
-  var Q11_2 = document.getElementById("Big2");
-  var Q11_3 = document.getElementById("Big3");
+  var Q10_1 = document.getElementById("Q10_1");
+  var Q11_1 = document.getElementById("Q11_1");
+  var Q11_2 = document.getElementById("Q11_2");
+  var Q11_3 = document.getElementById("Q11_3");
 
   Q10_1.addEventListener("click", function(){
     Q10_1.classList.add('is-big');
@@ -175,8 +188,8 @@
     Q11_2.classList.remove('is-big');
     Q11_3.classList.remove('is-big');
   });
-  var Q10_2 = document.getElementById("big2");
-    Q10_2.addEventListener("click", function(){
+  var Q10_2 = document.getElementById("Q10_2");
+  Q10_2.addEventListener("click", function(){
     Q10_2.classList.add('is-big');
     Q10_1.classList.remove('is-big');
     Q10_3.classList.remove('is-big');
@@ -184,8 +197,8 @@
     Q11_1.classList.remove('is-big');
     Q11_3.classList.remove('is-big');
   });
-  var Q10_3 = document.getElementById("big3");
-    Q10_3.addEventListener("click", function(){
+  var Q10_3 = document.getElementById("Q10_3");
+  Q10_3.addEventListener("click", function(){
     Q10_3.classList.add('is-big');
     Q10_2.classList.remove('is-big');
     Q10_1.classList.remove('is-big');
@@ -195,7 +208,7 @@
   });
 
   // 第11問 Q12をクリックしたら、Q13リストのli要素の順番と中身のテキストをconsoleに表示させよ。
-  var Q12 = document.getElementById('Q12')
+  var Q12 = document.getElementById('Q12');
   const ulelment = document.getElementById('List');
   const lielement = ulelment.getElementsByTagName('li');
 
